@@ -75,5 +75,20 @@ public class PlanetaResource {
 		
 		return ResponseEntity.ok(planet);
 	}
+	
+	/**
+	 * Metodo responsavel por deletar um planeta pelo ID
+	 * @param id
+	 * @return
+	 */
+	
+	@RequestMapping(value = "/{id}" , method =  RequestMethod.DELETE)
+	public ResponseEntity<Planet> delete(@PathVariable String id){
+		
+		planetaService.delete(id);
+		
+		return ResponseEntity.noContent().build();
+		
+	}
 
 }

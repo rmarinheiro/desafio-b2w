@@ -59,13 +59,19 @@ public class PlanetaService {
 		planet.ifPresent(itemPlaneta ->{
 			ResultDTO resultDTO = planetaRestService.findByName(itemPlaneta.getNome());
 			
-			if(resultDTO.getResultsFilms() != null && !resultDTO.getResultsFilms().isEmpty()){
-				PlanetDTO planetaDTO = resultDTO.getResultsFilms().get(0);
+			if(resultDTO.getResults() != null && !resultDTO.getResults().isEmpty()){
+				PlanetDTO planetaDTO = resultDTO.getResults().get(0);
 				itemPlaneta.setTotalFilms(planetaDTO.getFilms().size());
 				
 		}
 		});
 		
+		
+	}
+	
+	public void delete(String id) {
+		Optional<Planet> planet = planetaRepository.findById(id);
+		planet.ifPresent(item -> planetaRepository.delete(item));
 		
 	}
 

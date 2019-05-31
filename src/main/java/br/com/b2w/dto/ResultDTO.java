@@ -4,15 +4,17 @@ import java.util.List;
 
 public class ResultDTO {
 	
-	public List<PlanetDTO> resultsFilms;
+	public List<PlanetDTO> results;
 
-	public List<PlanetDTO> getResultsFilms() {
-		return resultsFilms;
+	public List<PlanetDTO> getResults() {
+		return results;
 	}
 
-	public void setResultsFilms(List<PlanetDTO> resultsFilms) {
-		this.resultsFilms = resultsFilms;
+	public void setResults(List<PlanetDTO> results) {
+		this.results = results;
 	}
+
+	
 
 	
 	
